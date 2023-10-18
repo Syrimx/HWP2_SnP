@@ -1,10 +1,13 @@
-Wiederholung der Elektrotechnik Grundlagen
+# Hardware Labor & Systemnahe Programmierung
+
+## Wiederholung der Elektrotechnik Grundlagen
 Vorwiderstaende, Ohmsches Gesetz, Kirhoffer Gesetze
 
-Workflow Projekt Konzeptionieren
+## Workflow Projekt Konzeptionieren
 <tba>
 Features:
 
+*Uhr stellen (alle drei taster → mittlerer taster lang modus einleiten, mit links stunde und mit rechts minute stellen)
 *PWM Helligkeitssteurung
 *Binaere Ausgabe auf 11 LEDs
 *Steuerung ueber Taster
@@ -15,7 +18,7 @@ Features:
 
 
 
-Konzeptionierung der hardware
+### Konzeptionierung der hardware
 *Leiterplatte dient zur persistenz → mikrocontroller + konzeptioniertes schema wird drauf geloetet
 *Herausfinden, welche PINS welche Anschlussmoeglichkeiten besichten
 *11 LEDs benoetigen Vorwiderstaend
@@ -25,9 +28,12 @@ Konzeptionierung der hardware
 	→ Taster 1: Sleep Modi Toogle (Genauigkeitsmessung ?)
 	→ Taster 2: Helligkeitssteuerung PWM (Beweis der Leistungsabnahme ? → Tests)
 	→ Taster 3: Flashy Effekts Toggle (blinken, nightrider)
-*Zeitbasis ?
+	→ Taster 1 – 3 (lange druecken): Uhr stellen
 
-Konzeptionierung der software
+*Zeitbasis ?
+	→ Takt in milliSekunde umwandeln und in Software Umtechnen diese Umrechnen
+
+### Konzeptionierung der software
 *Ansteuerung der PINS
 	→ (ggf ein abstraktionslayer programmierung)
 *Wie steuern wir die Taster an ?
@@ -37,7 +43,7 @@ Konzeptionierung der software
 *Stunden und Minuten aus time struct → in binaer ueberfuehren
 
 
-Konzeptionierung der Tests
+### Konzeptionierung der Tests
 *genauigkeitsmessung des Sleep Modis
 	→ spannung zwischen vorwiderstand und hinter LED messen
 *Beweis der  Leistungsabnahme
@@ -45,15 +51,15 @@ Konzeptionierung der Tests
 *Schematic Rule Check (SRC)
 *Design Rule Check (DRC)
 
-Workflow KiCad (Konzeptionierungsumsetzung)
+## Workflow KiCad (Konzeptionierungsumsetzung)
 Stromversorgung anlegen → Mikrocontroller anschliessen/an Ground setzen
 
-Workflow CNC Fraese 
+## Workflow CNC Fraese 
 <tba>
 
-Workflow Mikrocontroller programmieren
+## Workflow Mikrocontroller programmieren
 Programmierinterface API entwickeln
 <tba>
 
-Workflow Testing 
+## Workflow Testing 
 <tba>
