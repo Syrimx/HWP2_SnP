@@ -7,49 +7,52 @@ Vorwiderstaende, Ohmsches Gesetz, Kirhoffer Gesetze
 <tba>
 Features:
 
-*Uhr stellen (alle drei taster → mittlerer taster lang modus einleiten, mit links stunde und mit rechts minute stellen)
-*PWM Helligkeitssteurung
-*Binaere Ausgabe auf 11 LEDs
-*Steuerung ueber Taster
-*Sleepmodi mit Beweis der Leistungsabnahme
-*Zeitbasis ueber Timer und Uhrenquarz (Genauigkeitsmessung → wieviel PPM ?)
-*Programmierung ueber ISP
-*Programmierung ueber AVR-gcc
+* Uhr stellen (alle drei taster)
+  * mittlerer taster lang modus einleiten
+  * links stunde stellen
+  * rechts minute stellen
+* PWM Helligkeitssteurung
+* Binaere Ausgabe auf 11 LEDs
+* Steuerung ueber Taster
+* Sleepmodi mit Beweis der Leistungsabnahme
+* Zeitbasis ueber Timer und Uhrenquarz (Genauigkeitsmessung → wieviel PPM ?)
+* Programmierung ueber ISP
+* Programmierung ueber AVR-gcc
 
 
 
 ### Konzeptionierung der hardware
-*Leiterplatte dient zur persistenz → mikrocontroller + konzeptioniertes schema wird drauf geloetet
-*Herausfinden, welche PINS welche Anschlussmoeglichkeiten besichten
-*11 LEDs benoetigen Vorwiderstaend
-	→ wie wird Stunde Binar dargestellt 
-	→ wie wird Minute dargestellt
-*Funktion der Taster
-	→ Taster 1: Sleep Modi Toogle (Genauigkeitsmessung ?)
-	→ Taster 2: Helligkeitssteuerung PWM (Beweis der Leistungsabnahme ? → Tests)
-	→ Taster 3: Flashy Effekts Toggle (blinken, nightrider)
-	→ Taster 1 – 3 (lange druecken): Uhr stellen
+* Leiterplatte dient zur persistenz → mikrocontroller + konzeptioniertes schema wird drauf geloetet
+* Herausfinden, welche PINS welche Anschlussmoeglichkeiten besichten
+* 11 LEDs benoetigen Vorwiderstaend
+  * wie wird Stunde Binar dargestellt
+  * wie wird Minute dargestellt
+* Funktion der Taster
+  * Taster 1: Sleep Modi Toogle (Genauigkeitsmessung ?)
+  * Taster 2: Helligkeitssteuerung PWM (Beweis der Leistungsabnahme ? → Tests)
+  * Taster 3: Flashy Effekts Toggle (blinken, nightrider)
+  * Taster 1 – 3 (lange druecken): Uhr stellen
 
-*Zeitbasis ?
-	→ Takt in milliSekunde umwandeln und in Software Umtechnen diese Umrechnen
+* Zeitbasis ?
+  * Takt in milliSekunde umwandeln und in Software Umtechnen diese Umrechnen
 
 ### Konzeptionierung der software
-*Ansteuerung der PINS
-	→ (ggf ein abstraktionslayer programmierung)
-*Wie steuern wir die Taster an ?
-*Wie wird PWM implementiert ?
+* Ansteuerung der PINS
+  * ggf ein abstraktionslayer programmierung
+* Wie steuern wir die Taster an ?
+* Wie wird PWM implementiert ?
 
-*Auslesen des aktuellen Uhrzeit (UTC) ueber time struct https://www.c-howto.de/tutorial/zeitfunktionen/
-*Stunden und Minuten aus time struct → in binaer ueberfuehren
+* Auslesen des aktuellen Uhrzeit (UTC) ueber time struct https://www.c-howto.de/tutorial/zeitfunktionen/
+* Stunden und Minuten aus time struct → in binaer ueberfuehren
 
 
 ### Konzeptionierung der Tests
-*genauigkeitsmessung des Sleep Modis
-	→ spannung zwischen vorwiderstand und hinter LED messen
-*Beweis der  Leistungsabnahme
-	→ spannung auslesen und bei bedarf auf terminal ausgebens
-*Schematic Rule Check (SRC)
-*Design Rule Check (DRC)
+* genauigkeitsmessung des Sleep Modis
+  * spannung zwischen vorwiderstand und hinter LED messen
+* Beweis der  Leistungsabnahme
+  * spannung auslesen und bei bedarf auf terminal ausgebens
+* Schematic Rule Check (SRC)
+* Design Rule Check (DRC)
 
 ## Workflow KiCad (Konzeptionierungsumsetzung)
 Stromversorgung anlegen → Mikrocontroller anschliessen/an Ground setzen
